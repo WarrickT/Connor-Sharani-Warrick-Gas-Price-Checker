@@ -1,233 +1,232 @@
-Baldwin, ON
 331 Highway 17 West, McKerrow, ON, Canada
+Baldwin, ON
 46.2859381
 -81.7757139
-Bancroft, ON
 341 Hastings Street North, Bancroft, ON, Canada
+Bancroft, ON
 45.0845495
 -77.8607917
-Barrie, ON
 100 Mapleview Drive East, Barrie, ON, Canada
+Barrie, ON
 44.3373288
 -79.6794106
-Barrie, ON (Bayfield)
 450 Bayfield St, Barrie, ON L4M 5A2
+Barrie, ON (Bayfield)
 44.4095983
 -79.7108639
-Belleville, ON
 390 North Front Street, Belleville, ON K8P 3E1
+Belleville, ON
 44.1890103
 -77.4004507
-Blind River, ON
 498 Causley Street, Blind River, ON P0R 1B0
+Blind River, ON
 46.1851164
 -82.9276158
-Bracebridge, ON
 40 Depot Drive, Bracebridge, ON P1L 0A1
+Bracebridge, ON
 45.0469319
 -79.2897993
-Burlington, ON
 900 Maple Avenue, Burlington, ON L7S 2J8
+Burlington, ON
 43.3258697
 -79.820193
-Cambridge, ON
 22 Pinebush Road, Cambridge, ON N1R 8K5
+Cambridge, ON
 43.410665
 -80.327018
-Casselman, ON
 21 Richer Close, Casselman, ON K0A 1M0
+Casselman, ON
 45.3040851
 -75.0828625
-Cobourg, ON
 1125 Elgin Street West, Cobourg, ON K9A 5T9
+Cobourg, ON
 43.9703116
 -78.2020562
-Collingwood, ON
 10 Keith Avenue, Collingwood, ON L9Y 0W5
+Collingwood, ON
 44.5092355
 -80.2398436
-Comber, ON
 7018 Industrial Drive, Comber, ON N0P 1J0
+Comber, ON
 42.2388801
 -82.5502663
-Concord, ON
 1 Bass Pro Mills Drive, Concord, ON L4K 5W4
+Concord, ON
 43.8260317
 -79.5370411
-Cornwall, ON
 805 Brookdale Avenue, Cornwall, ON K6J 4P3
+Cornwall, ON
 45.0239595
 -74.7476413
-Deep River, ON
 33277 Hwy 17, Deep River, ON K0J 1P0
+Deep River, ON
 46.0993682
 -77.5008876
-Dryden, ON
 640 Government Street, Dryden, ON P8N 2P6
+Dryden, ON
 49.7858206
 -92.8108225
-Etobicoke, ON
 25 The West Mall, Etobicoke, ON M9C 1B8
+Etobicoke, ON
 43.6114392
 -79.5591796
-Exeter, ON
 100 Thames Road East, Exeter, ON N0M 1S3
+Exeter, ON
 43.363187
 -81.479831
-Gananoque, ON
 705 King Street East, Gananoque, ON K7G 1H4
+Gananoque, ON
 44.3378226
 -76.1489676
-Goderich, ON
 35430 Huron Road R.R., Goderich, ON N7A 3X8
+Goderich, ON
 43.7307974
 -81.686074
-Grimsby, ON
 4 Windward Drive, Grimsby, ON L3M 4E8
+Grimsby, ON
 43.210086
 -79.601657
-Hamilton, ON
 999 Upper Wentworth Street, Hamilton, ON L9A 4X5
+Hamilton, ON
 43.2171748
 -79.8619396
-Huntsville, ON
 70 King William Street, Huntsville, ON P1H 2A5
+Huntsville, ON
 45.3348476
 -79.207557
-Ignace, ON
 304 Main Street, Ignace, ON P0T 1T0
+Ignace, ON
 49.4165366
 -91.6610382
-Kemptville, ON
 311 Ryans Well Drive, Kemptville, ON K0G 1J0
+Kemptville, ON
 45.0285293
 -75.6340045
-Kenora, ON
 1229 Highway 17, Kenora, ON P9N 1L9
+Kenora, ON
 49.7597564
 -94.4717994
-Kincardine, ON
 811 Durham Street, Kincardine, ON N2Z 3B8
+Kincardine, ON
 44.172453
 -81.615243
-Kingston, ON
 97 Dalton Avenue, Kingston, ON K7K 0C4
+Kingston, ON
 44.2678204
 -76.5025414
-Kingston, ON - Dalton Avenue
 88 Dalton Avenue, Kingston, ON K7K 6C3
+Kingston, ON - Dalton Avenue
 44.2659935
 -76.5012882
-Kitchener, ON
 663 Victoria Street North, Kitchener, ON N2H 5G3
+Kitchener, ON
 43.4608336
 -80.4725626
-London, ON
 4350 Wellington Road South, London, ON N6E 2Z6
+London, ON
 42.9182146
 -81.2088775
-Madoc, ON
 114 Bonjour Boulevard, Madoc, ON K0K 2K0
+Madoc, ON
 44.5124925
 -77.4812541
-Markham, ON - Markville
 5000 Highway 7, Markham, ON L3R 4M9
+Markham, ON - Markville
 43.8682345
 -79.2882055
-Markham, ON - Woodside
 3075 Highway 7, Markham, ON L3R 5Y5
+Markham, ON - Woodside
 43.8493485
 -79.3556351
-Minden, ON
 92 Water St, Minden, ON K0M 2K0
+Minden, ON
 44.9312451
 -78.7161797
-Mississauga, ON - Winston Churchill Blvd.
 3155 Argentia Road, Mississauga, ON L5N 8E1
+Mississauga, ON - Winston Churchill Blvd.
 43.5942132
 -79.7890612
-Mount Forest, ON
 101 Mt Forest Dr, Mount Forest, ON N0G 2L0
+Mount Forest, ON
 43.9884928
 -80.7433829
-Nepean, ON - Robertson Road
 2135 Robertson Road, Nepean, ON K2H 5Z2
+Nepean, ON - Robertson Road
 45.3223824
 -75.8360978
-Niagara Falls, ON
 3770 Montrose Road, Niagara Falls, ON L2H 3K3
+Niagara Falls, ON
 43.1189419
 -79.1232927
-Nipigon, ON
 453 Trans-Canada Highway, Nipigon, ON P0T 2J0
+Nipigon, ON
 49.0184622
 -88.3067408
-North Bay, ON
 890 McKeown Avenue, North Bay, ON P1B 8M1
+North Bay, ON
 46.3342286
 -79.469055
-North York, ON
 1800 Sheppard Avenue East, North York, ON M2J 5A7
+North York, ON
 43.7780424
 -79.3437632
-Orangeville, ON
 95 First Street, Orangeville, ON L9W 2E8
+Orangeville, ON
 43.9301619
 -80.0951566
-Ottawa, ON
 50 Rideau Suite #300, Ottawa, ON K1N 9J7
+Ottawa, ON
 45.4262511
 -75.690353
-Owen Sound, ON
 1555 18th Avenue East, Owen Sound, ON N4K 6Y3
+Owen Sound, ON
 44.5735403
 -80.911108
-Parry Sound, ON
 292 Louisa Street, Parry Sound, ON P2A 3C1
+Parry Sound, ON
 45.3459211
 -80.005968
-Perth, ON
 80 Dufferin St, Perth, ON K7H 3A7
+Perth, ON
 44.9078351
 -76.2661596
-Peterborough, ON - Lansdowne Street West
 645 Lansdowne Street West, Peterborough, ON K9J 7Y5
+Peterborough, ON - Lansdowne Street West
 44.2834481
 -78.3313112
-Pickering, ON
 1899 Brock Road, Pickering, ON L1V 4H4
+Pickering, ON
 43.8453135
 -79.0709548
-Port Hope, ON
 6498 Telephone Rd., Port Hope, ON L1A3V6
+Port Hope, ON
 43.9731358
 -78.2857231
-Port Severn, ON
 35 Lone Pine Road, Port Severn, ON L0K 1S0
+Port Severn, ON
 44.8057829
 -79.7359082
-Sault Ste. Marie, ON
 360 Great Northern Road, Sault Ste. Marie, ON P6B 4Z7
+Sault Ste. Marie, ON
 46.537354
 -84.317821
-Scarborough, ON
 6780 Kingston Road, Scarborough, ON M1B 1G8
+Scarborough, ON
 43.7986521
 -79.147224
-Simcoe, ON
-Wawa, ON
 95 Mission Road, Wawa, ON P0S 1K0
+Wawa, ON
 47.9836274
 -84.7796917
-White River, ON
 17 Trans-Canada Highway, White River, ON P0N 3G0
+White River, ON
 48.3973653
 -85.0810727
-Windsor, ON
 4150 Walker Rd, Windsor, ON N8W 3T5
+Windsor, ON
 42.2598008
 -82.9641915
-Woodstock, ON
 580 Bruin Blvd, Woodstock, ON N4V 1E5
+Woodstock, ON
 43.111802
 -80.737952

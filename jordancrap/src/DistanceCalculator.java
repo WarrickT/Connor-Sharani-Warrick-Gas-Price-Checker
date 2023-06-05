@@ -24,7 +24,7 @@ public class DistanceCalculator {
     }
 
     void scrapeUserCoordinates() throws InterruptedException{
-        options.addArguments("--headless=new");
+        //options.addArguments("--headless=new");
         this.distanceCalculatorDriver = new ChromeDriver(options);
 
         distanceCalculatorDriver.get(newLink);
