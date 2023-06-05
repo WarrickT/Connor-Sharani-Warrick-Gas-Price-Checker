@@ -1,6 +1,6 @@
 {
     "java.project.sourcePaths": [
-        "jordancrap\\src"
+        "jordancrap/src"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
