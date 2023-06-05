@@ -84,5 +84,6 @@
         "c:\\Users\\conjl\\Downloads\\selenium-java-4.9.1\\lib\\j2objc-annotations-1.3.jar",
         "c:\\Users\\conjl\\Downloads\\selenium-java-4.9.1\\lib\\jakarta.activation-1.2.2.jar",
         "c:\\Users\\conjl\\Downloads\\selenium-java-4.9.1\\lib\\jcommander-1.82.jar"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "disabled"
 }
