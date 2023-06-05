@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,9 +19,15 @@ public abstract class Scraper {
     protected ArrayList<Station> stationData;
     protected ArrayList<String> stationDatabase;
 
+    protected ReadDatabase readDatabase;
+
     String userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:53.0) Gecko/20100101 Firefox/53.0";
 
-    Scraper(String stationType, ArrayList<Station> stationData, String userAddress){
+    Scraper(String stationType, ArrayList<Station> stationData, String userAddress, double userRadius) throws IOException, InterruptedException{
+        this.readDatabase = new ReadDatabase(stationType);
+
+        this.userRadius = userRadius;
+
         this.distanceCalculator = new DistanceCalculator(userAddress + ", ON, Canada");
         System.out.println(distanceCalculator.userAddress);
         this.userAddress = modifyLocation(userAddress + "%2C+ON%2C+Canada");
@@ -29,11 +36,13 @@ public abstract class Scraper {
         options.addArguments("--headless=new");
         this.driver = new ChromeDriver(options);
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\warri\\OneDrive\\Desktop\\Connor, Sharani, Warrick GasPrice\\demo\\src\\drivers\\chromedriver.exe");
+
+        setStationDatabase(readDatabase.getGasStationDatabase());
+        scrapeUserCoordinates();
     }
 
     String modifyLocation(String userAddress){
-        userAddress = userAddress.replace(" ", "+");
-        userAddress = userAddress.replace(",", "%2C");
+        userAddress = userAddress.replace(" ", "+").replace(",", "%2C");
         return userAddress;
     }
 
@@ -84,5 +93,8 @@ public abstract class Scraper {
         }
 
         return formattedStationData;
+    }
+    void sortByPrice(){
+        Collections.sort(stationData);
     }
 }

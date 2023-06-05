@@ -1,50 +1,53 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 public class CSVWriter {
-    private ArrayList<Station> stationData;
-    private String stationType;    
+    private String[][] formattedStationData;
+    private String stationType;
     private String userAddress;
     File newCSVFile;
+    FileWriter writer;
 
-    CSVWriter(ArrayList<Station> stationData, String stationType, String userAddress){
-        this.stationData = stationData;
+    CSVWriter(String[][] formattedStationData, String stationType, String userAddress) throws IOException{
+        this.formattedStationData = formattedStationData;
         this.stationType = stationType;
         this.userAddress = userAddress;
+        System.out.println("Nice");
         createCSVFile();
     }
-
-    void writeToCSV() throws IOException{
-        FileWriter writer = new FileWriter(newCSVFile);
-
-        if(stationType.equals("Tesla")){
-            writer.write("Closest Tesla Recharge Stations, User Address: " + userAddress + "\n");
+    
+    void createCSVFile() throws IOException{
+        if(stationType.equals("Tesla SuperCharge")){
+            this.newCSVFile = new File("TeslaSuperchargeStations.csv");
+        }
+        else if(stationType.equals("Diesel")){
+            this.newCSVFile= new File("DieselStations.csv");
         }
         else{
-            writer.write("Cheapest " + stationType + " refill Stations, User Address: " + userAddress + "\n");
+            this.newCSVFile = new File(stationType + "GasolineStations.csv");
         }
-        writer.write("Station Name, Station Address, Station Price, Maps Link" + "\n");
 
-        for(Station station:stationData){
-            writer.write(station.getStationName() + ", " + station.getAddress() + ", " + station.getUnitCost() + ", " + station.getGoogleMapsDirections() + "\n");
+        this.writer = new FileWriter(newCSVFile);
+        writer.write(stationType + " Refill Stations, User Address: " + userAddress + "\n");
+        writer.write("Station Name, Station Address, Station Price, Displacement, Maps Link" + "\n");
+
+        for(String[] station:formattedStationData){
+            for(int index = 0; index < station.length; index ++){
+                writer.write("\"" + station[index].replace(" ¢", " cents") + "\"");
+                if(index != 4){
+                    writer.write(", ");
+                }
+            }
+            writer.write("\n");
         }
         writer.close();
     }
-
-    void createCSVFile(){
-        if(stationType.equals("Tesla")){
-            this.newCSVFile = new File("NearestTeslaChargers.csv");
-        }
-        else if(stationType.equals("Diesel")){
-            this.newCSVFile= new File("CheapeestDieselStations.csv");
-        }
-        else{
-            this.newCSVFile = new File("Cheapest" + stationType + "GasolineStations.csv");
-        }
     }
 
 
-}
+     
+
+
+

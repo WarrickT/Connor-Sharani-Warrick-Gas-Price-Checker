@@ -7,13 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class AddressValidation{
-    private String userAddress = "";
+    private String userAddress;
     private String searchDirectory = "#rso > div.ULSxyf > div > div > div > div > div:nth-child(2) > div > div:nth-child(2) > b > div > div > span";
 
-    void setAddress(String userAddress){
-        this.userAddress = userAddress;
+    AddressValidation(String userAddress){
+        this.userAddress = userAddress.replace(" ", "+").replace(",", "%2C");
     }
-
     String promptAddress(){
         Scanner reader = new Scanner(System.in);
 

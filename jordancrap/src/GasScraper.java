@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -15,8 +14,9 @@ public class GasScraper extends Scraper{
     String loadMoreButtonQuery = "body > #root > div.default__theme___1urxG > div.Page-module__content___196kn.Page-module__padded___3hQ0U > div.container__container___2Wq7c.container__padded___2u4nK.container__snap___1RrVv > div.grid__grid___1bWao.grid__gridContainer___nyUt1 > div.grid__column___nhz7X.grid__tablet7___WBfn5.grid__desktop8___38Y4U > div > a.button__button___fo2tk.forms__field___E4Q71.forms__formControlBase___3Cl7I.button__fluid___2ez5a.button__secondary___1xuZs.button__branded___3hDeX";
     String acceptCookiesQuery = "body > div.cc-window.cc-banner.cc-type-info.cc-theme-block.cc-bottom.cc-color-override-530831885 > div.cc-compliance > a.cc-btn.cc-dismiss";
 
-    GasScraper(String stationType, ArrayList<Station> stationData, String userAddress) throws IOException{
-        super(stationType, stationData, userAddress);
+    GasScraper(String stationType, ArrayList<Station> stationData, String userAddress, double userRadius) throws IOException, InterruptedException{
+        super(stationType, stationData, userAddress, userRadius);
+        
         if(stationType.equals("Regular")){
             this.stationType = "1";
         }
@@ -37,11 +37,11 @@ public class GasScraper extends Scraper{
 
         driver.get(searchLink);
 
+        //Add try catch
         WebElement loadMoreButton = driver.findElement(By.cssSelector(loadMoreButtonQuery));
         WebElement acceptCookiesButton = driver.findElement(By.cssSelector(acceptCookiesQuery));
 
         int gasStationCount = 0;
-        int validGasStationCount = 0;
 
         acceptCookiesButton.click();
         Thread.sleep(1000);
@@ -72,8 +72,7 @@ public class GasScraper extends Scraper{
                         double stationLong = Double.parseDouble(stationDatabase.get(stationDatabase.indexOf(currentStationAddress) + 2));
                         currentDisplacement = distanceCalculator.calculateDistance(stationLat, stationLong)/1000.0;
 
-                        DecimalFormat decimalFormat = new DecimalFormat("##.##");
-                        currentDisplacement = Double.parseDouble(decimalFormat.format(currentDisplacement));
+                        currentDisplacement = Double.parseDouble((new DecimalFormat("##.##")).format(currentDisplacement));
                     }
                     else{
                         continue innerloop;
@@ -113,8 +112,6 @@ public class GasScraper extends Scraper{
                 currentStationObject.setGoogleMapsDirections("https://www.google.com/maps/dir/?api=1&origin=" + userAddress + "&destination=" + modifyLocation(currentStationAddress.replace("9th", "Ninth").replace("16th", "Sixteenth").replace("Ln", "Line")));
                 currentStationObject.setDisplacement(currentDisplacement);
                 stationData.add(currentStationObject);
-
-                validGasStationCount ++;
             }
 
             try{
@@ -126,14 +123,15 @@ public class GasScraper extends Scraper{
             catch(org.openqa.selenium.NoSuchElementException exception){
                 break outerloop;
             }
+            catch(org.openqa.selenium.StaleElementReferenceException exception2){
+                break outerloop;
+            }
             
         }
 
         driver.close();
     }
-    void sortByPrice(){
-        Collections.sort(stationData);
-    }
+    
 
     boolean containsInDatabase(String stationAddress){
         for(String element:stationDatabase){

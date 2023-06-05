@@ -6,12 +6,22 @@ import java.util.ArrayList;
 public class ReadDatabase {
     protected ArrayList<String> stationDatabase = new ArrayList<String>();
     private BufferedReader br = null;
-    private String gasStationDatabaseName = "modifiedDatabase.txt";
-    private String teslaDatabaseName = "teslaDatabase.txt";
+    private String databaseName;
+    private String stationType;
+
+    ReadDatabase(String stationType){
+        this.stationType = stationType;
+    }
 
     ArrayList<String> getGasStationDatabase() throws IOException{
+        if(stationType.equals("Tesla Supercharge")){
+            databaseName = "teslaDatabase.txt";
+        }
+        else{
+            databaseName = "modifiedDatabase.txt";
+        }
         try{
-            br = new BufferedReader(new FileReader("database" + "/" + gasStationDatabaseName));
+            br = new BufferedReader(new FileReader("database" + "/" + databaseName));
 
             String contentLine = br.readLine();
             while (contentLine != null) {
