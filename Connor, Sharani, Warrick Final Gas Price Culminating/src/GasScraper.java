@@ -48,7 +48,6 @@ public class GasScraper extends Scraper{
     void scrapeGasDiesel() throws IOException, InterruptedException{
         //Creating the search link
         String searchLink = "https://www.gasbuddy.com/home?search=" + userAddress + "&fuel=" + stationType + "&method=all&maxAge=48";
-        System.out.println(searchLink);
 
         //Setting up the chromedriver for webscraping. 
         driver.get(searchLink);
@@ -68,7 +67,6 @@ public class GasScraper extends Scraper{
                 loadMoreButton = driver.findElement(By.cssSelector(loadMoreButtonQuery));
             }
             catch(org.openqa.selenium.NoSuchElementException exception){
-                System.out.println("These are all the Gas Stations so far.");
             }
 
             //Stores the web elements of each station. 
@@ -118,9 +116,7 @@ public class GasScraper extends Scraper{
 
                 //GasBuddy.com is sorted by displacement. If the current station's radius is beyond the 
                 //user's entered range, the scraping will stop. 
-                if(currentDisplacement > userRadius){
-                    break outerloop;
-                    }
+
 
                 //Retreving the station name. 
                 try{
@@ -147,6 +143,10 @@ public class GasScraper extends Scraper{
                 catch(org.openqa.selenium.NoSuchElementException exception){
                     continue innerloop;
                 }
+
+                if(currentDisplacement > userRadius){
+                    break outerloop;
+                    }
 
                 //Creates the station object if all the properties of the station has been validated, and adds them to the stationData ArrayList.
                 Station currentStationObject = new Station(currentName, currentStationAddress, currentUnitCost);
