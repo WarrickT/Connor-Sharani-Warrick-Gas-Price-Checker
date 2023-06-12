@@ -34,7 +34,7 @@ public class ReadDatabase {
             databaseName = "teslaDatabase.txt";
         }
         else{
-            databaseName = "modifiedDatabase.txt";
+            databaseName = "gasDatabase.txt";
         }
 
         try{

@@ -43,6 +43,7 @@ public class MainPage extends JPanel{
         this.frame = frame;
         this.facade = facade;
 
+        
         //Creating Labels (Tiles and subtiles) on the main page and assinging coordinates  
         maintitleLabel = new JLabel("Local Gas Price Checker");
         maintitleLabel.setBounds(400,20,200,100);
@@ -57,11 +58,9 @@ public class MainPage extends JPanel{
         this.add(gasLabel);
         this.add(locationLabel);
         this.add(budgetLabel);
-
         //Add the input boxes and findGasbutton to the scream
         createInputs();
         createFindGasButton();
-
 
 
         //Overwrite the current screen with the boxes and buttons. 
