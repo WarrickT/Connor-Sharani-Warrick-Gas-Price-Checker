@@ -2,8 +2,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -14,8 +16,6 @@ import javax.swing.JTextField;
  * page navigation.
  */
 public class MainPage extends JPanel{
-    //Watch out for encapsulation
-
     private Frame frame;
     private Facade facade;
 
@@ -23,6 +23,12 @@ public class MainPage extends JPanel{
     private JComboBox<String> stationDropdown;
     private JTextField addressField;
     private JComboBox<String> radiusDropdown;
+
+    private JLabel gasLabel;
+    private JLabel locationLabel;
+    private JLabel budgetLabel;
+    private JLabel maintitleLabel;
+    private JLabel backgroundLabel = new JLabel(new ImageIcon("src/Images/LocalGasPriceBackground.png"));
 
     //The options available for the dropdown boxes.
     private String[] stationOptions = {"Regular", "Midgrade", "Premium", "Diesel", "Tesla Supercharge"};
@@ -39,16 +45,37 @@ public class MainPage extends JPanel{
         this.frame = frame;
         this.facade = facade;
 
+        //Creating Labels (Tiles and subtiles) on the main page and assinging coordinates  
+        maintitleLabel = new JLabel("Local Gas Price Checker");
+        maintitleLabel.setBounds(400,20,200,100);
+        gasLabel = new JLabel("Choose your gas type");
+        gasLabel.setBounds(100, 300, 200, 50);
+        locationLabel = new JLabel("Please enter your address:");
+        locationLabel.setBounds(100,365,200,50); 
+        budgetLabel = new JLabel("Select your budget:");
+        budgetLabel.setBounds(100,430,300,100);
+
+        backgroundLabel.setBounds(0, 0, 900, 600);
+
+        this.add(maintitleLabel);
+        this.add(gasLabel);
+        this.add(locationLabel);
+        this.add(budgetLabel);
+
+        this.add(backgroundLabel);
+
         //Add the input boxes and findGasbutton to the scream
         createInputs();
         createFindGasButton();
+
+
 
         //Overwrite the current screen with the boxes and buttons. 
         revalidate();
         repaint();
     }
 
-    //Creating the input boxes. 
+    //Creating the input boxes.
     void createInputs() {
         stationDropdown = new JComboBox<>(stationOptions);
         stationDropdown.setSelectedIndex(0);

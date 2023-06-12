@@ -171,5 +171,7 @@
         "c:\\Users\\warri\\libs\\selenium.jars\\selenium-java-4.9.1-unzip\\lib\\opentelemetry-semconv-1.25.0-alpha.jar",
         "c:\\Users\\warri\\libs\\selenium.jars\\selenium-java-4.9.1-unzip\\lib\\reactive-streams-1.0.4.jar",
         "c:\\Users\\warri\\libs\\selenium.jars\\selenium-java-4.9.1-unzip\\lib\\slf4j-api-2.0.7.jar"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.compile.nullAnalysis.mode": "disabled"
 }
