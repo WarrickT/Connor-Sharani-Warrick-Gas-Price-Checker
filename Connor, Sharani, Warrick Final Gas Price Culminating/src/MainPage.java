@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.io.IOException;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -28,7 +27,6 @@ public class MainPage extends JPanel{
     private JLabel locationLabel;
     private JLabel budgetLabel;
     private JLabel maintitleLabel;
-    private JLabel backgroundLabel = new JLabel(new ImageIcon("src/Images/LocalGasPriceBackground.png"));
 
     //The options available for the dropdown boxes.
     private String[] stationOptions = {"Regular", "Midgrade", "Premium", "Diesel", "Tesla Supercharge"};
@@ -55,14 +53,10 @@ public class MainPage extends JPanel{
         budgetLabel = new JLabel("Select your budget:");
         budgetLabel.setBounds(100,430,300,100);
 
-        backgroundLabel.setBounds(0, 0, 900, 600);
-
         this.add(maintitleLabel);
         this.add(gasLabel);
         this.add(locationLabel);
         this.add(budgetLabel);
-
-        this.add(backgroundLabel);
 
         //Add the input boxes and findGasbutton to the scream
         createInputs();
