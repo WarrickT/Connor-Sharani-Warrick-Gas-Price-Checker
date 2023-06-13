@@ -40,7 +40,7 @@ public class DistanceCalculator {
      */
     void scrapeUserCoordinates() throws InterruptedException{
         //Prevent the web browser from opening when webscraping.
-        //options.addArguments("--headless=new");
+        options.addArguments("--headless=new");
         this.distanceCalculatorDriver = new ChromeDriver(options);
 
         //Set up the chromedriver object using the link.

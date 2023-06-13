@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,6 +14,7 @@ import javax.swing.RowSorter;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+
 
 /**
  * The object for the second page panel. 
@@ -52,12 +54,17 @@ public class SecondPage extends JPanel{
 
         //Instantiating the title label
         titleLabel = new JLabel("Results");
-        titleLabel.setBounds(400, 20, 100, 50);
+        titleLabel.setBounds(0, 0, 900, 50);
+        titleLabel.setHorizontalAlignment(JLabel.CENTER);
+        titleLabel.setForeground(Color.WHITE);
+        titleLabel.setBackground(Color.RED);
+        titleLabel.setOpaque(true);
 
         //Instantiating the back button
         JButton backButton = new JButton("Back");
         backButton.addActionListener(e -> frame.showMainPage());
         backButton.setBounds(25, 475, 100, 50);
+        backButton.setBackground(Color.RED);
 
         //Instantiating the createCSV button
         JButton csvButton = new JButton("Create CSV");
@@ -70,6 +77,7 @@ public class SecondPage extends JPanel{
             }
         });
         csvButton.setBounds(775, 475, 100, 50);
+        csvButton.setBackground(Color.GREEN); 
 
         //Adding the lable and the buttons onto the screen.
         this.add(titleLabel);

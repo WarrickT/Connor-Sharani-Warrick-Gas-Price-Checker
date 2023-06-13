@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.io.IOException;
 
@@ -47,7 +48,7 @@ public class MainPage extends JPanel{
         this.facade = facade;
 
         
-        //Creating Labels (Tiles and subtiles) on the main page and assigning coordinates  
+        //Creating Labels to prompt the user for information.
         gasLabel = new JLabel("Choose your gas type");
         gasLabel.setBounds(550, 140, 200, 50);
         locationLabel = new JLabel("Please enter your address:");
@@ -99,6 +100,7 @@ public class MainPage extends JPanel{
      */
     void createFindGasButton() {
         JButton findGasButton = new JButton("Find Gas");
+        findGasButton.setBackground(radiusDropdown.getBackground()); // Set button background color to match the dropdown
 
         //Try-catch must be implemented.
         findGasButton.addActionListener(e ->
@@ -115,6 +117,7 @@ public class MainPage extends JPanel{
         
         );
         findGasButton.setBounds(650, 450, 200, 100);
+        findGasButton.setBackground(Color.GREEN);
         this.add(findGasButton);
     }
 
