@@ -25,6 +25,15 @@ public class GasScraper extends Scraper{
     private WebElement acceptCookiesButton;
     private WebElement loadMoreButton;
 
+    /**
+     * Constructor for the Gas Scraper object.
+     * @param stationType User's entered station type.
+     * @param stationData User's entered station data.
+     * @param userAddress User's entered address.
+     * @param userRadius User's entered radius.
+     * @throws IOException Throws IOException from FileWriter and BufferedReader
+     * @throws InterruptedException Throws InterruptedException from Selenium Webscraping. 
+     */
     GasScraper(String stationType, ArrayList<Station> stationData, String userAddress, double userRadius) throws IOException, InterruptedException{
         //Calling the constructor of its parent class, Scraper
         super(stationType, stationData, userAddress, userRadius);
@@ -44,7 +53,11 @@ public class GasScraper extends Scraper{
         }
     }
 
-    //Scraping the gas station data from GasBuddy.com
+    /**
+     * Scraping gas and diesel stations. 
+     * @throws IOException Throws IOException from FileWriter and BufferedReader
+     * @throws InterruptedException Throws InterruptedException from Selenium Webscraping. 
+     */
     void scrapeGasDiesel() throws IOException, InterruptedException{
         //Creating the search link
         String searchLink = "https://www.gasbuddy.com/home?search=" + userAddress + "&fuel=" + stationType + "&method=all&maxAge=48";
@@ -175,10 +188,13 @@ public class GasScraper extends Scraper{
         driver.close();
     }
     
-    //Checks if the station address is in the database so a lat-long coordinate can be retrieved, and the displacement can be founf. 
-    //Can only use linear search due to the station database not being sorted alphabetically
-    //Each line of the database is also not neccessarily the station address
 
+    /**
+     * Checks if the station address is in the database so a lat-long coordinate can be retrieved, and the displacement can be found. 
+     * Each line of the database is also not neccessarily the station address
+     * @param stationAddress
+     * @return  Whether or not the scraped gas station is in the database. 
+     */
     boolean containsInDatabase(String stationAddress){
         for(String element:stationDatabase){
             if(element.equals(stationAddress)){

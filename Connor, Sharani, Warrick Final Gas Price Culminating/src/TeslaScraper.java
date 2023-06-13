@@ -19,7 +19,16 @@ public class TeslaScraper extends Scraper{
         super(stationType, stationData, userAddress, userRadius);
     }
 
-    void scrapeTesla() throws IOException{
+    /**
+     * "Scraping" the tesla data from database. 
+     * The .txt file has been formatted this way:
+     * (Station Name)
+     * (Station Location)
+     * (Latitude)
+     * (Longitude)
+     * @throws IOException
+     */
+    void findTeslaStations() throws IOException{
         for(String line:stationDatabase){
             if(Character.isDigit(line.charAt(0)) && line.contains(", ON")){
                 double stationLat = Double.parseDouble(stationDatabase.get(stationDatabase.indexOf(line) + 2));

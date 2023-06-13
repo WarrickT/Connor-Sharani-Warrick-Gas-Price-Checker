@@ -26,12 +26,18 @@ public class DistanceCalculator {
 
     private ChromeOptions options = new ChromeOptions();
 
-    //Constructor method for the distanceCalculator. 
+    /**
+     * Constructor method for distanceCalculator.
+     * @param userAddress
+     */
     DistanceCalculator(String userAddress){
         this.userAddress = userAddress;
     }
-
-    //Webscrape lat-long coordinates using Selenium
+    
+    /**
+     * Webscrape lat-long coordinates of the user's entered location using Selenium. 
+     * @throws InterruptedException Throws interruted exception from selenium webscraping.
+     */
     void scrapeUserCoordinates() throws InterruptedException{
         //Prevent the web browser from opening when webscraping.
         //options.addArguments("--headless=new");
@@ -58,7 +64,12 @@ public class DistanceCalculator {
         distanceCalculatorDriver.close();
     }
 
-    //Calculating the displacement between the user's location and the corresponding gas station location. 
+    /**
+     *  Calculating the displacement between the user's location and the corresponding gas station location. 
+     * @param stationLat Latitude of the station
+     * @param stationLong Longitude of the staiton
+     * @return Distance between the user's location and the station.
+     */
     double calculateDistance(double stationLat, double stationLong) {
         final int earthRadius = 6371; // Radius of the earth
 

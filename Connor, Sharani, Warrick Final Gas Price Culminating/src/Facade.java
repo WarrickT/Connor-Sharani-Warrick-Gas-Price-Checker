@@ -51,7 +51,7 @@ public class Facade {
     void scrapeStations() throws IOException, InterruptedException{
         if(stationType.equals("Tesla Supercharge")){
             teslaScraper = new TeslaScraper(stationType, stationData, userAddress, userRadius);
-            teslaScraper.scrapeTesla();
+            teslaScraper.findTeslaStations();
         }
         else{
             gasScraper = new GasScraper(stationType, stationData, userAddress, userRadius);

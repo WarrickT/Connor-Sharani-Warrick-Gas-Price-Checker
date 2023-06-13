@@ -9,9 +9,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
  */
 public class AddressValidation{
     private String userAddress;
-    /**
-     * CSS Selector: This selector exists if one google searchs a valid address, as a google maps results will appear. 
-     */
+    //CSS Selector: This selector exists if one google searchs a valid address, as a google maps results will appear. 
+     
     private String searchDirectory = "#rso > div.ULSxyf > div > div > div > div > div:nth-child(2) > div > div:nth-child(2) > b > div > div > span";
 
     /**

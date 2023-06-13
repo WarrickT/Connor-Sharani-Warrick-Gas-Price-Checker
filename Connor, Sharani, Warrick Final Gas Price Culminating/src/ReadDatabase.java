@@ -54,7 +54,6 @@ public class ReadDatabase {
         }
 
         catch(IOException ioe){
-            System.out.println("Cannot find file");
             ioe.printStackTrace();
         }
 
@@ -66,7 +65,6 @@ public class ReadDatabase {
 	   } 
 	        catch (IOException ioe) 
                 {
-		        System.out.println("Error in closing the BufferedReader");
 	   }
         }
         //Returning the String ArrayList of the data

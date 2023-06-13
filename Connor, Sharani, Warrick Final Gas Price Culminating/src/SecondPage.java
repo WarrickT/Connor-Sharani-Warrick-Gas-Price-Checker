@@ -167,7 +167,7 @@ public class SecondPage extends JPanel{
             int sortedColumn = sortStatusList.get(0).getColumn();
 
             //Creating lambda methods to sort the 2D String Array by column. 
-            //Column 2 and 3 require additional code since they need to be sorted by numerical value. 
+            //Column 2 and 3 require additional code since they need to be sorted by their numerical rather than alphabetical values. 
             if(sortedColumn == 2 || sortedColumn == 3){
                 if(currentSortStatus.equals("ASCENDING")){
                     Arrays.sort(formattedStationData, (a, b) -> Double.compare(Double.parseDouble(a[sortedColumn].replace(" ¢", "").replace(" km", "")), 

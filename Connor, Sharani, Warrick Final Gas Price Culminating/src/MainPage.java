@@ -1,7 +1,7 @@
-import java.awt.Color;
 import java.awt.Dimension;
 import java.io.IOException;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -32,6 +32,9 @@ public class MainPage extends JPanel{
     private String[] stationOptions = {"Regular", "Midgrade", "Premium", "Diesel", "Tesla Supercharge"};
     private String[] radiusOptions = {"2.5", "5", "7.5", "10", "12.5", "15"};
 
+    private JLabel backgroundLabel = new JLabel();
+    private ImageIcon icon = new ImageIcon("Images/LocalGasPriceBackground.png");
+
     /**
      * The MainPage constructor method
      * @param frame Reference to the frame object to allow for navigation between frames
@@ -44,51 +47,56 @@ public class MainPage extends JPanel{
         this.facade = facade;
 
         
-        //Creating Labels (Tiles and subtiles) on the main page and assinging coordinates  
-        maintitleLabel = new JLabel("Local Gas Price Checker");
-        maintitleLabel.setBounds(400,20,200,100);
+        //Creating Labels (Tiles and subtiles) on the main page and assigning coordinates  
         gasLabel = new JLabel("Choose your gas type");
-        gasLabel.setBounds(100, 300, 200, 50);
+        gasLabel.setBounds(550, 140, 200, 50);
         locationLabel = new JLabel("Please enter your address:");
-        locationLabel.setBounds(100,365,200,50); 
-        budgetLabel = new JLabel("Select your budget:");
-        budgetLabel.setBounds(100,430,300,100);
+        locationLabel.setBounds(550,240,200,50); 
+        budgetLabel = new JLabel("Select your radius of search:");
+        budgetLabel.setBounds(550,310,300,100);
 
-        this.add(maintitleLabel);
+        backgroundLabel.setBounds(0, 0, 900, 600);
+        backgroundLabel.setIcon(icon);
+
         this.add(gasLabel);
         this.add(locationLabel);
         this.add(budgetLabel);
+
         //Add the input boxes and findGasbutton to the scream
         createInputs();
         createFindGasButton();
 
+        this.add(backgroundLabel);
 
         //Overwrite the current screen with the boxes and buttons. 
         revalidate();
         repaint();
     }
 
-    //Creating the input boxes.
+    /**
+     * Creating the input boxes. 
+     */
     void createInputs() {
         stationDropdown = new JComboBox<>(stationOptions);
         stationDropdown.setSelectedIndex(0);
-        stationDropdown.setBounds(100, 330, 200, 50);
+        stationDropdown.setBounds(550, 180, 200, 50);
 
         addressField = new JTextField();
         addressField.setPreferredSize(new Dimension(200, 50));
-        addressField.setBounds(100, 400, 350, 50);
+        addressField.setBounds(525, 275, 350, 50);
 
         radiusDropdown = new JComboBox<>(radiusOptions);
         radiusDropdown.setSelectedIndex(0);
-        radiusDropdown.setBackground(new Color(255, 172, 28));
-        radiusDropdown.setBounds(100, 480, 100, 50);
+        radiusDropdown.setBounds(550, 375, 100, 50);
 
         this.add(stationDropdown);
         this.add(addressField);
         this.add(radiusDropdown);
     }
 
-    //Creating the "Find Gas" button.
+    /**
+     * Creating the find gas button.
+     */
     void createFindGasButton() {
         JButton findGasButton = new JButton("Find Gas");
 
@@ -106,11 +114,15 @@ public class MainPage extends JPanel{
         }
         
         );
-        findGasButton.setBounds(600, 400, 200, 100);
+        findGasButton.setBounds(650, 450, 200, 100);
         this.add(findGasButton);
     }
 
-    //Refers back to the facade to check if the address is indeedly in Ontario.
+    /**
+     * Refers back to facade to see if address is indeedly in Ontairo. 
+     * @throws IOException Throws IOException from BufferedReader and FileWriter
+     * @throws InterruptedException Throws InterruptedException from webscraping
+     */
     void checkAddress() throws IOException, InterruptedException{
         if(!facade.setUserAddress(addressField.getText())){
             JOptionPane.showMessageDialog(this,"Please Enter A Valid Address in Ontario. \nEnter the city name for better results.","Reprompt", JOptionPane.WARNING_MESSAGE);
@@ -120,11 +132,18 @@ public class MainPage extends JPanel{
         }
     }
 
-    //Returns the station type from the input boxes.
+    /**
+     * Returns station type from input box. 
+     * @return station type from input box. 
+     * 
+     */
     String getStation(){
         return stationDropdown.getSelectedItem().toString();
     }
-    //Returns the user's radius from the input boxes.
+    /**
+     * Returns radius from input box.
+     * @return double value of radius from input box. 
+     */
     double getRadius(){
         return Double.parseDouble(radiusDropdown.getSelectedItem().toString());
     }
