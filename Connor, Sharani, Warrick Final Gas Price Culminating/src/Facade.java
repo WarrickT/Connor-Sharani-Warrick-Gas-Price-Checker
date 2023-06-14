@@ -13,24 +13,24 @@ public class Facade {
      * The GUI Window, and the 
      * User-inputted information from the GUI
      */
-    Frame guiFrame;
-    String stationType;
-    String userAddress;
-    double userRadius;
+    private Frame guiFrame;
+    private String stationType;
+    private String userAddress;
+    private double userRadius;
 
     /**
      * Objects used for scraping Gas Station or Tesla Supercharger data.
      */
-    GasScraper gasScraper;
-    TeslaScraper teslaScraper;
+    private GasScraper gasScraper;
+    private TeslaScraper teslaScraper;
 
     /**
      * Used for validating the user's address
      */
-    AddressValidation addressValidation;
-    CSVWriter csvWriter;
+    private AddressValidation addressValidation;
+    private CSVWriter csvWriter;
 
-    ArrayList<Station> stationData = new ArrayList<Station>();
+    private ArrayList<Station> stationData = new ArrayList<Station>();
 
 
     /**
