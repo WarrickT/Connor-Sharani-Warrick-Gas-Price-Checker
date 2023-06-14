@@ -161,6 +161,7 @@ public class GasScraper extends Scraper{
                     break outerloop;
                     }
 
+                System.out.println(currentName);
                 //Creates the station object if all the properties of the station has been validated, and adds them to the stationData ArrayList.
                 Station currentStationObject = new Station(currentName, currentStationAddress, currentUnitCost);
                 currentStationObject.setGoogleMapsDirections("https://www.google.com/maps/dir/?api=1&origin=" + userAddress + "&destination=" + modifyLocation(currentStationAddress.replace("9th", "Ninth").replace("16th", "Sixteenth").replace("Ln", "Line")));

@@ -51,7 +51,7 @@ public abstract class Scraper {
         //Prevent chrome window from opening during scraping. 
         options.addArguments("--headless=new");
         this.driver = new ChromeDriver(options);
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\warri\\OneDrive\\Desktop\\Connor, Sharani, Warrick GasPrice\\demo\\src\\drivers\\chromedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "C:\\Connor and Warrick\\chromedriver_win32_\\chromedriver.exe");
 
         //Uses the readDatabase and distanceCalculator objects to retrieve data regarding th euser inputted 
         //station type and address. 
